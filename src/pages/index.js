@@ -39,9 +39,8 @@ export default function Home() {
         <Box bgColor={'#7790da'}>
           <Container position={'relative'}>
             <video height={540} src={'/video/header.mp4'} autoPlay loop />
-
-            <Box w={'100%'} ml={'36.5%'} left={'auto'} top={'-150px'} position={'relative'}>
-              <Button bg={'#fad121'} borderRadius={'70px'} h={'124px'} fontSize={'50px'} p={'26px'}            >
+            <Box left={['24%', '36%']} top={'70%'} position={'absolute'}>
+              <Button bg={'#fad121'} borderRadius={'70px'} h={['70px', '90px', '124px']} fontSize={['30px', '40px', '50px']} p={['16px', '20px', '26px']}            >
                 Connect
               </Button>
             </Box>
