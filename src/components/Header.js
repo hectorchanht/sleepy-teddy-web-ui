@@ -4,16 +4,16 @@ import Image from 'next/image';
 import React from 'react';
 
 const ScrollLinks = () => <>
-  <Text onClick={() => document.getElementById('learn').scrollIntoView({ behavior: 'smooth' })}>
+  <Text cursor={'pointer'} onClick={() => document.getElementById('learn').scrollIntoView({ behavior: 'smooth' })}>
     Learn
   </Text>
-  <Text onClick={() => document.getElementById('rarity').scrollIntoView({ behavior: 'smooth' })}>
+  <Text cursor={'pointer'} onClick={() => document.getElementById('rarity').scrollIntoView({ behavior: 'smooth' })}>
     Rarity
   </Text>
-  <Text onClick={() => document.getElementById('faq').scrollIntoView({ behavior: 'smooth' })}>
+  <Text cursor={'pointer'} onClick={() => document.getElementById('faq').scrollIntoView({ behavior: 'smooth' })}>
     FAQ
   </Text>
-  <Text onClick={() => document.getElementById('roadmap').scrollIntoView({ behavior: 'smooth' })}>
+  <Text cursor={'pointer'} onClick={() => document.getElementById('roadmap').scrollIntoView({ behavior: 'smooth' })}>
     Roadmap
   </Text>
 </>
@@ -21,7 +21,7 @@ const ScrollLinks = () => <>
 const MobileHeader = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  return <>
+  return <Box display={['flex', 'flex', 'none']}>
     <Icon zIndex={2000} color={'white'} boxSize={'34px'} onClick={isOpen ? onClose : onOpen} as={isOpen ? CloseIcon : HamburgerIcon} />
     <Drawer placement={'top'} onClose={onClose} isOpen={isOpen} >
       <DrawerOverlay />
@@ -33,7 +33,7 @@ const MobileHeader = () => {
         </DrawerBody>
       </DrawerContent>
     </Drawer>
-  </>
+  </Box>
 }
 
 const Header = () => {
@@ -50,6 +50,7 @@ const Header = () => {
         </HStack>
 
         <HStack spacing={4} display={['none', 'none', 'flex']}>
+          <Box w={'20px'} />
           <Image src="/image/discord.png" alt="discord" width={43} height={30} />
           <Box w={'20px'} />
           <Image src="/image/twitter.png" alt="twitter" width={43} height={30} />
