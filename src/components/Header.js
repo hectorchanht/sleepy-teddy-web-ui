@@ -7,8 +7,11 @@ const ScrollLinks = () => <>
   <Text cursor={'pointer'} onClick={() => document.getElementById('learn').scrollIntoView({ behavior: 'smooth' })}>
     Learn
   </Text>
-  <Text cursor={'pointer'} onClick={() => document.getElementById('rarity').scrollIntoView({ behavior: 'smooth' })}>
-    Rarity
+  <Text cursor={'pointer'} onClick={() => document.getElementById('roadmap').scrollIntoView({ behavior: 'smooth' })}>
+    Roadmap
+  </Text>
+  <Text cursor={'pointer'} onClick={() => document.getElementById('purchase').scrollIntoView({ behavior: 'smooth' })}>
+    Purchase
   </Text>
   <Text cursor={'pointer'} onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
     Contact
@@ -34,7 +37,7 @@ const MobileHeader = () => {
 }
 
 const Header = () => {
-  return <Box bgColor={'#7790da'} p={6}>
+  return <Box bgColor={'white'} p={6}>
     <Container maxWidth={1320}>
       <Flex justifyContent={'space-between'} alignItems={'center'}>
         <Image src="/image/logo-long.png" alt="cat Logo" width={363} height={106} />
@@ -46,14 +49,10 @@ const Header = () => {
           <ScrollLinks />
         </HStack>
 
-        <HStack spacing={4} display={['none', 'none', 'flex']}>
+        {/* <HStack spacing={4} display={['none', 'none', 'flex']}>
           <Box w={'20px'} />
-          <Image src="/image/discord.png" alt="discord" width={43} height={30} />
-          <Box w={'20px'} />
-          <Image src="/image/twitter.png" alt="twitter" width={43} height={30} />
-          <Box w={'20px'} />
-          <Image src="/image/medium.png" alt="medium" width={43} height={30} />
-        </HStack>
+          <ExternalImageLink/>
+        </HStack> */}
       </Flex>
 
     </Container>

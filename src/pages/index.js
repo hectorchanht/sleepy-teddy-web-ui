@@ -5,8 +5,6 @@ import React from 'react';
 import { Footer, Header } from '../components';
 
 
-const maxWidth = 1080;
-
 const QAndA = ({ title = '', content = [] }) => <>
   <Text fontSize="34px" lineHeight={'35px'} fontWeight="bold" mb={2} >
     {title}
@@ -33,7 +31,21 @@ export default function Home() {
 
       <Box as={'main'} flex={1} m={0}>
 
-        <Box bg={'#f0f0f0'} id={'learn'}>
+        <Box bg={'#cf4c8e'}>
+          <Container py={0}>
+            <Image src="/teddy/teddy1.jpeg" alt="teddy1" width={1600} height={1199} />
+          </Container>
+        </Box>
+        <Box fontSize="34px" lineHeight={'35px'} fontWeight="bold" color={'white'} bg={'#AA4C7C'} textAlign={'center'}>
+          <Container>
+            <SimpleGrid columns={2} spacing={10} alignItems={'center'}>
+              <Text>BUY NOW</Text>
+              <Text>STILL AVAILABLE</Text>
+            </SimpleGrid>
+          </Container>
+        </Box>
+
+        <Box id={'learn'}>
           <Container >
             <SimpleGrid columns={[1, 1, 2]} spacing={10} alignItems={'center'}>
               <Box order={[2, 2, 1]}>
@@ -48,7 +60,25 @@ export default function Home() {
           </Container>
         </Box>
 
-        <Box bg={'#39e27d'}>
+        <Container id={'rarity'} >
+          <SimpleGrid columns={[1, 1, 2]} spacing={10} alignItems={'center'}>
+            <Box>
+              <QAndA
+                title={'Why Sleeping Teddy?'}
+                content={[
+                  'Each Sleepy Teddy NFT as your Sleepy Teddy Club membership card, allows you to join the Sleepy Teddy Club and enjoy member exclusive functions. Also have a sleepy teddy can protect you when you are ready to sleep, make sure that you will always 	have a sweet dream. For every sleepy teddy purchase, we will donate 50% of the profit to the following non-government organizations to protect the animals and help poor children around the world, to ensure that everyone and animals can have a dream. In addition, we put some extremely rare ocean elements, if these ocean elements are purchased, we will donate an additional 20% of the profit of those Sleepy Teddies with ocean elements as charity. Here is the NGO we will donate to',
+                ]}
+              />
+            </Box>
+
+            <Box>
+            </Box>
+          </SimpleGrid>
+
+          {['World Vision Hong Kong', 'UNICEF', 'Greenpeace'].map(t => <Button bg={'#fad121'} key={t}>{t}</Button>)}
+        </Container>
+
+        <Box id={'roadmap'}>
           <Container>
             <QAndA
               title={'How Sleepy is my Teddy?'}
@@ -56,67 +86,51 @@ export default function Home() {
                 'Every Teddy is extremely Sleepy, so we have the opportunity to dress them up on the Ethereum blockchain. However, each Teddy has a different Sleepy level, the higher the Sleepy level, the higher rareness of Teddy as there are more opportunities for us to dress Teddy up with more special and luxury clothes.',
               ]} />
 
-            <QAndAs
-              data={[
-                {
-                  title: '25% Zzz',
-                  content: ['The Sleepy Teddys are sleepy but some of them are awake to do something.']
-                },
-                {
-                  title: '50% Zz',
-                  content: ['The clubhouse began to be filled with all kinds of Sleepy Teddy, and the Lobby began to become more and more crowded.']
-                },
-                {
-                  title: '75% Z',
-                  content: ['More and more Sleepy Teddy are starting to wake up another Sleepy Teddy, they are	going to change the World.']
-                },
-                {
-                  title: '100% All Waken',
-                  content: ['The second generation of Sleepy Teddy is coming soon.']
-
-                }
-              ]}
-            />
           </Container>
         </Box>
 
-        <Container id={'rarity'} >
+        <Box bg={'#87c5e9'}>
+          <Container>
+            <SimpleGrid columns={[1, 2, 2]} spacing={10} alignItems={'center'}>
+              <Box>
+                <QAndA
+                  title={'25% Zzz'}
+                  content={['The Sleepy Teddys are sleepy but some of them are awake to do something']} />
+              </Box>
+              <Box>
+                <QAndA
+                  title={'50% Zz'}
+                  content={['The clubhouse began to be filled with all kinds of Sleepy Teddy, and the Lobby began to become more and more crowded.']} />
+              </Box>
+              <Box>
+                <QAndA
+                  title={'75% Z'}
+                  content={['More and more Sleepy Teddy are starting to wake up another Sleepy Teddy, they are	going to change the World.']} />
+              </Box>
+              <Box>
+                <QAndA
+                  title={'100% All Waken'}
+                  content={['The second generation of Sleepy Teddy is coming soon.']} />
+              </Box>
+            </SimpleGrid>
+          </Container>
+        </Box>
+        <Box id={'purchase'}>
+          <Container>
+            <QAndA
+              title={'How to get a Sleepy Teddy?'}
+              content={['Click the button below if you want some Sleepy Teddy.', 'Sleepy Teddy is are priced at a flat rate (0.02Ξ)', 'If you have any difficulties with having a Sleepy Teddy, feel free to find us!']} />
+            <Button h={156} w={327} bg={'#fad121'} fontSize={'66px'} lineHeight={'76px'} p={'30px 60px'}>
+              purchase
+            </Button>
+          </Container>
+        </Box>
 
-
-
-          <SimpleGrid columns={[1, 1, 2]} spacing={10} alignItems={'center'}>
-            <Box>
-              <QAndA
-                title={'Why Sleeping Teddy?'}
-                content={[
-                  'Each Sleepy Teddy NFT as your Sleepy Teddy Club membership card, allows you to join the Sleepy Teddy Club and enjoy member exclusive functions. Also have a sleepy teddy can protect you when you are ready to sleep, make sure that you will always 	have a sweet dream. For every sleepy teddy purchase, we will donate 50% of the profit to the following non-government organizations to protect the animals and help poor children around the world, to ensure that everyone and animals can have a dream. In addition, we put some extremely rare ocean elements, if these ocean elements are purchased, we will donate an additional 20% of the profit of those Sleepy Teddies with ocean elements as charity. Here is the NGO we will donate to:',
-                  'World Vision Hong Kong',
-                  'UNICEF',
-                  'Greenpeace'
-                ]}
-              />
-            </Box>
-
-            <Box>
-              <Button h={156} w={327} bg={'#fad121'} fontSize={'76px'} lineHeight={'76px'} p={'30px 60px'}>
-                Ξ 0.06
-              </Button>
-              <br />
-              <br />
-              <Text fontSize="2xl" fontWeight="bold">
-                Alright, how much?
-              </Text>
-              <br />
-              <Text>
-                Sleepy Teddy are priced at a flat rate (0.06 Ξ)
-              </Text>
-            </Box>
-          </SimpleGrid>
-
+        <Container>
           <Text fontSize="34px" lineHeight={'35px'} fontWeight="bold" mb={2} id={'contact'}>
             The Team
           </Text>
-          <SimpleGrid columns={[1, 3, 3]} spacing={10} alignItems={'center'}>
+          <SimpleGrid columns={[1, 3, 3]} spacing={'12px'} alignItems={'center'}>
             <Box>
               Project Lead - Andy
             </Box>
@@ -128,20 +142,6 @@ export default function Home() {
             </Box>
           </SimpleGrid>
         </Container>
-
-        <Box bg={'#ffe573'} py={'65px'}>
-          <Container position={'relative'}>
-            <Box maxW={432}>
-              <QAndA
-                title={'Future of Sleepy Teddy?'}
-                content={['Sleepy Teddy are much more than an NFT art project. We have plans and hopes to build a Cool Cat ecosystem comprised of interactivity and utility, community rewards and growth, collaboration with brands, and much more! We want the community to help dictate and determine which features we should be focusing on next - so you guys will be heavily involved in the future of Sleepy Teddy!']}
-              />
-            </Box>
-            <Box position={'absolute'} right={0} bottom={-210}>
-              <Image src="/image/under-a-rock.gif" alt="medium" width={756} height={576} />
-            </Box>
-          </Container>
-        </Box>
 
       </Box>
       <Footer />
