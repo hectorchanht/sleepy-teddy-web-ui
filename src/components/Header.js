@@ -10,11 +10,8 @@ const ScrollLinks = () => <>
   <Text cursor={'pointer'} onClick={() => document.getElementById('rarity').scrollIntoView({ behavior: 'smooth' })}>
     Rarity
   </Text>
-  <Text cursor={'pointer'} onClick={() => document.getElementById('faq').scrollIntoView({ behavior: 'smooth' })}>
-    FAQ
-  </Text>
-  <Text cursor={'pointer'} onClick={() => document.getElementById('roadmap').scrollIntoView({ behavior: 'smooth' })}>
-    Roadmap
+  <Text cursor={'pointer'} onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
+    Contact
   </Text>
 </>
 
