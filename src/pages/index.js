@@ -1,4 +1,4 @@
-import { Box, Button, Container as CContainer, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Button, Container as CContainer, HStack, SimpleGrid, Text } from '@chakra-ui/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
@@ -75,7 +75,9 @@ export default function Home() {
             </Box>
           </SimpleGrid>
 
-          {['World Vision Hong Kong', 'UNICEF', 'Greenpeace'].map(t => <Button bg={'#fad121'} key={t}>{t}</Button>)}
+          <HStack justifyContent={'center'}>
+            {['World Vision HK', 'UNICEF', 'Greenpeace'].map(t => <Button bg={'#fad121'} key={t}>{t}</Button>)}
+          </HStack>
         </Container>
 
         <Box id={'roadmap'}>
@@ -130,7 +132,7 @@ export default function Home() {
           <Text fontSize="34px" lineHeight={'35px'} fontWeight="bold" mb={2} id={'contact'}>
             The Team
           </Text>
-          <SimpleGrid columns={[1, 3, 3]} spacing={'12px'} alignItems={'center'}>
+          <SimpleGrid columns={[1, 3, 3]} spacing={'12px'} textAlign={'center'}>
             <Box>
               Project Lead - Andy
             </Box>
