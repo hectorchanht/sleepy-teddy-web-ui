@@ -39,8 +39,8 @@ export default function Home() {
         <Box fontSize="34px" lineHeight={'35px'} fontWeight="bold" color={'white'} bg={'#AA4C7C'} textAlign={'center'}>
           <Container>
             <SimpleGrid columns={2} spacing={10} alignItems={'center'}>
-              <Text>BUY NOW</Text>
-              <Text>STILL AVAILABLE</Text>
+              <Text textDecoration={'line-through'}>BUY NOW</Text>
+              <Text>UNDER DEVELOP</Text>
             </SimpleGrid>
           </Container>
         </Box>
@@ -76,7 +76,13 @@ export default function Home() {
           </SimpleGrid>
 
           <HStack justifyContent={'center'}>
-            {['World Vision HK', 'UNICEF', 'Greenpeace'].map(t => <Button bg={'#fad121'} key={t}>{t}</Button>)}
+            {[
+              { label: 'World Vision HK', href: 'https://www.worldvision.org/' },
+              { label: 'UNICEF', href: 'https://www.unicef.org/' },
+              { label: 'Greenpeace', href: 'https://www.greenpeace.org/' }
+            ].map(({ label, href }) => <Button as={'a'} href={href} bg={'#fad121'} key={label}>
+              {label}
+            </Button>)}
           </HStack>
         </Container>
 
@@ -122,8 +128,8 @@ export default function Home() {
             <QAndA
               title={'How to get a Sleepy Teddy?'}
               content={['Click the button below if you want some Sleepy Teddy.', 'Sleepy Teddy is are priced at a flat rate (0.02Ξ)', 'If you have any difficulties with having a Sleepy Teddy, feel free to find us!']} />
-            <Button h={156} w={327} bg={'#fad121'} fontSize={'66px'} lineHeight={'76px'} p={'30px 60px'}>
-              purchase
+            <Button textDecoration={'line-through'} h={156} w={327} bg={'#fad121'} fontSize={'66px'} lineHeight={'76px'} p={'30px 60px'}>
+              connect
             </Button>
           </Container>
         </Box>
