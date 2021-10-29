@@ -80,7 +80,7 @@ export default function Home() {
               { label: 'World Vision HK', href: 'https://www.worldvision.org/' },
               { label: 'UNICEF', href: 'https://www.unicef.org/' },
               { label: 'Greenpeace', href: 'https://www.greenpeace.org/' }
-            ].map(({ label, href }) => <Button as={'a'} href={href} bg={'#fad121'} key={label}>
+            ].map(({ label, href }) => <Button as={'a'} target={"_blank"} href={href} bg={'#fad121'} key={label}>
               {label}
             </Button>)}
           </HStack>
